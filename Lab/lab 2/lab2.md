@@ -1,10 +1,8 @@
-import os
-
-markdown_content = """# Lab 2 — Advanced Anomaly Detection for Cybersecurity Logs
+# Lab 2 — Advanced Anomaly Detection for Cybersecurity Logs
 
 **Student Name:** Shachar Laria  
 **Student ID:** 214399198  
-**Date:** 20/07/2026  
+**Date:** 20/07/2026
 
 ---
 
