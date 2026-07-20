@@ -1,4 +1,6 @@
-# Lab 2 — Advanced Anomaly Detection for Cybersecurity Logs
+import os
+
+markdown_content = """# Lab 2 — Advanced Anomaly Detection for Cybersecurity Logs
 
 **Student Name:** Shachar Laria  
 **Student ID:** 214399198  
@@ -6,22 +8,39 @@
 
 ---
 
-## 1. Exploratory Data Analysis (EDA) & Dataset Summary
+## 1 & 2. Exploratory Data Analysis (EDA) & Numerical Distributions
 
-### Dataset Properties
-* **Dimensions:** The ingested dataset contains a total of $3,960$ network log records.
-* **Class Balance:** The dataset features a heavy class imbalance deliberately designed to mirror production environments:
-  * **Normal Logs:** $3,800$ samples (~96%) representing authorized, baseline user activities.
-  * **Attack Logs:** $160$ samples (~4%) acting as the malicious outlier minority.
+### Dataset Dimensions & Class Distribution
+* **Total Log Records:** $3,960$ rows in the baseline operational dataset.
+* **Normal Log Distribution:** $3,800$ samples (~96%), creating the standard operational baseline.
+* **Attack Log Distribution:** $160$ samples (~4%), serving as the malicious anomaly target group.
 
-### Feature Decomposition
-The feature engineering pipeline maps two primary vectors:
-1. **Categorical Vectors:** `user`, `country`, `device`, and `protocol`. These represent the identity and environmental context of the connection.
-2. **Numerical Vectors:** `hour` (temporal feature), `failed_attempts`, `distance_km`, `session_minutes`, and `bytes_out_mb` (behavioral features).
+### Visualizing Feature Distributions
+Below is the structural breakdown of the numerical features engineered to capture user behavior anomalies:
 
-### Expected Baseline vs. Anomaly Profiles
-* **Normal Behavior:** Characterized by centralized, routine traffic patterns. The majority of actions occur from standard developer or analyst workstations, originating from domestic geolocations (`IL`), during normal working hours, with zero or near-zero failed authentication attempts.
-* **Malicious Profiles:** Volumetric anomalies present heavy right-skewed distributions in features like `failed_attempts` (indicative of active automated attacks) or extreme geodistance gaps (`distance_km`), indicating impossible travel or foreign credential abuse.
+![Feature Distributions](eda_distributions.png)
+
+### Deep Technical Explanation of the Data Behavior
+
+1. **`hour` (Temporal Fingerprint):**
+   * **Analysis:** The histogram shows a perfect Gaussian-like distribution centered cleanly around midday (hours 10:00 to 14:00), tapering off sharply toward midnight and early morning.
+   * **Security Context:** Normal business operations are highly predictable. Any activity spiking drastically at 02:00 AM represents a temporal anomaly that could indicate automated malware actions or an attacker operating from a completely different time zone.
+
+2. **`failed_attempts` (Authentication Skew):**
+   * **Analysis:** An extreme right-skewed distribution. The vast majority of records sit comfortably at $0$ or $1$ failed attempts. However, there is a long, thin tail extending all the way out to $15+$ attempts.
+   * **Security Context:** While a single mistyped password is standard user behavior, the long tail represents clear automated **MITRE ATT&CK T1110 (Brute Force)** behavior. These isolated high-value spikes are exactly what the tree splits in the Isolation Forest catch immediately.
+
+3. **`distance_km` (Geographic Inconsistency):**
+   * **Analysis:** Similar to failed attempts, almost the entire dataset is tightly clustered near zero (representing domestic connections). A tiny, nearly invisible subset of anomalous outliers stretches dynamically past $4,000\\text{ to }8,000\\text{ km}$.
+   * **Security Context:** These long-tail records represent anomalous remote infrastructure access or "impossible travel" scenarios (e.g., logging in from Israel and then from a foreign country 10 minutes later), mapped directly to **MITRE ATT&CK T1078 (Valid Accounts)**.
+
+4. **`session_minutes` (Logon Duration):**
+   * **Analysis:** This feature exhibits a classic log-normal distribution, peaking around $25\\text{ to }40\\text{ minutes}$ and smoothly dropping off as sessions cross the $100\\text{-minute}$ mark.
+   * **Security Context:** Extended session runtimes that linger persistently outside this bell curve can indicate persistent Command and Scripting Interpreter actions or slow data staging.
+
+5. **`bytes_out_mb` (Data Exfiltration Indicator):**
+   * **Analysis:** An intensely concentrated distribution where standard interactions consume minimal bandwidth (under $50\\text{ MB}$). A few extreme, isolated bursts venture out towards $800\\text{--}900\\text{ MB}$.
+   * **Security Context:** Sudden, massive volumetric data spikes in accounts that traditionally carry low network footprints are classic signatures of unauthorized data collection or active exfiltration over C2 channels.
 
 ---
 
@@ -94,3 +113,10 @@ As a SOC Analyst, relying strictly on automated machine learning outputs introdu
 2. **Alert Fatigue Mitigation:** Isolation Forest was far more practical for reducing analyst workload, generating only **$1$ False Positive** compared to the **$7$ False Positives** produced by the Autoencoder.
 3. **Embeddings Value:** The Keras categorical embedding layers successfully organized high-dimensional log relationships into clear behavioral groups. However, the model requires a slightly adjusted percentile threshold (e.g., shifting from the 95th to the 99th percentile) to reduce false alarms in production.
 4. **SOC Architectural Takeaway:** A production SOC should **never rely on a single model architecture alone**. Tree-based models like Isolation Forest excel at neutralizing explicit, volumetric point attacks instantly, while deep-learning Autoencoders are necessary for capturing complex, slow, and multi-categorical behavioral deviations that attempt to hide within normal limits.
+"""
+
+file_path = "LAB_REPORT.md"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(markdown_content)
+
+print(f"File generated successfully at {file_path}")
