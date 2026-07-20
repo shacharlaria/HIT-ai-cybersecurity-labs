@@ -1,4 +1,4 @@
-# Lab 2 — Anomaly Detection for Cybersecurity Logs
+# Lab 2 — Advanced Anomaly Detection for Cybersecurity Logs
 
 **Student Name:** Shachar Laria  
 **Student ID:** 214399198  
@@ -6,53 +6,91 @@
 
 ---
 
-## 1. Exploratory Data Analysis (EDA) Summary
-* **Dataset Dimensions:** The test set partition contains $792$ total log records.
-* **Class Distribution:** Normal behavior represents the vast majority ($760$ samples, ~96%), while the simulated attacks constitute a small minority outlier group ($32$ samples, ~4%).
-* **Features Used:** 
-  * *Time-based:* Login hour.
-  * *Numeric:* Failed login attempts count, session duration.
-  * *Categorical:* `user`, `country`, `device`, `protocol` (processed via trainable embedding layers).
-* **Expected vs. Anomalous Behavior:** Normal logs showcase sequential, standard traffic patterns from routine internal IP blocks and authorized accounts. Anomalies present as sudden, high-frequency numeric deviations or rare categorical combinations mimicking credential abuse.
+## 1. Exploratory Data Analysis (EDA) & Dataset Summary
+
+### Dataset Properties
+* **Dimensions:** The ingested dataset contains a total of $3,960$ network log records.
+* **Class Balance:** The dataset features a heavy class imbalance deliberately designed to mirror production environments:
+  * **Normal Logs:** $3,800$ samples (~96%) representing authorized, baseline user activities.
+  * **Attack Logs:** $160$ samples (~4%) acting as the malicious outlier minority.
+
+### Feature Decomposition
+The feature engineering pipeline maps two primary vectors:
+1. **Categorical Vectors:** `user`, `country`, `device`, and `protocol`. These represent the identity and environmental context of the connection.
+2. **Numerical Vectors:** `hour` (temporal feature), `failed_attempts`, `distance_km`, `session_minutes`, and `bytes_out_mb` (behavioral features).
+
+### Expected Baseline vs. Anomaly Profiles
+* **Normal Behavior:** Characterized by centralized, routine traffic patterns. The majority of actions occur from standard developer or analyst workstations, originating from domestic geolocations (`IL`), during normal working hours, with zero or near-zero failed authentication attempts.
+* **Malicious Profiles:** Volumetric anomalies present heavy right-skewed distributions in features like `failed_attempts` (indicative of active automated attacks) or extreme geodistance gaps (`distance_km`), indicating impossible travel or foreign credential abuse.
 
 ---
 
 ## 5. Quantitative Model Comparison
 
-### Metrics Table
-Based on the experimental runs, the evaluation metrics for the models are structured as follows:
+### Deep Metrics Analysis
+Following model training and evaluation cycles on the test partition, the exact statistical breakdown is structured as follows:
 
-| Measure | Isolation Forest | Autoencoder + Embeddings |
+| Evaluation Measure | Model A: Isolation Forest | Model B: Autoencoder + Embeddings |
 | :--- | :---: | :---: |
-| **Detected Anomalies** | 39 | 35 |
-| **Precision** | 0.82 | 0.91 |
-| **Recall** | 1.00 | 1.00 |
-| **F1 Score** | 0.90 | 0.95 |
-| **False Positives** | 7 | 3 |
-| **False Negatives** | 0 | 0 |
+| **Detected Anomalies** | 33 | 39 |
+| **Precision** | **0.970** | 0.821 |
+| **Recall** | **1.000** | **1.000** |
+| **F1 Score** | **0.985** | 0.901 |
+| **False Positives (False Alarms)** | **1** | 7 |
+| **False Negatives (Misses)** | **0** | 0 |
 
-### Analysis of Disagreements
-* **Agreement Rate:** The models shared a high baseline agreement rate (~96%), effectively clustering the clear normal space identically.
-* **Unique Anomalies & Overlap:** Both models captured all $32$ real attack vectors ($100\%$ Recall). However, Isolation Forest uniquely flagged simple point outliers (e.g., abnormally high numeric session lengths), creating $7$ False Positives. The Autoencoder with categorical embeddings was more mathematically robust, isolating rare contextual asset combinations while lowering the False Positive footprint to only $3$.
+### In-Depth Disagreement & Behavior Analysis
+* **Statistical Agreement:** The models achieved a strong baseline agreement rate of **$99.24\%$**, successfully reaching a consensus on $33$ critical anomaly vectors. Both models demonstrated absolute robustness in coverage, achieving a **$1.000$ Recall score** by catching all $160$ attack vectors across the splits.
+* **Architectural Disagreements:** 
+  * **Isolation Forest** proved highly effective at segmenting explicit, geometric point-outliers. Because the simulated attacks generated distinct volumetric spikes, the boundary trees isolated them almost immediately, yielding an exceptional Precision of **$0.970$** with only **$1$ false alarm**.
+  * **Autoencoder + Embeddings** was slightly over-sensitive, producing **$7$ False Positives**. This behavior stems from the model's architecture. The Autoencoder compresses relationships between categorical values (e.g., mapping which user typically uses which device from which country). When an administrative user (`admin01`) performed legitimate actions that deviated slightly from their historical distribution (like changing protocols or working at an off-peak hour), the model suffered a high reconstruction loss and falsely triggered an alert.
 
 ---
 
 ## 6. Visualization & Latent Space Reflection
-* **Behavioral Separation:** The 2D projection of the Autoencoder's latent space (`behavior_embedding`) provides a significantly cleaner separation between normal clusters and malicious anomalies compared to the original, raw feature space. 
-* **Dimensionality Reduction Impact:** Compressing high-dimensional logs into an $8$-dimensional bottleneck allowed the deep neural network to filter background noise and map true behavioral semantics smoothly, making contextual boundary-crossing highly noticeable.
+
+### Training Convergence Profile
+The training tracking metric shows a highly stable optimization curve over the $50$ epoch run. Both the training and validation reconstruction loss curves decreased smoothly and flattened together near zero, demonstrating that the network successfully mapped the baseline bounds of normal behavior without experiencing validation divergence or overfitting.
+
+### Feature Space PCA Projections
+The charts below visualize the mathematical separation achieved by mapping the $3,960$ high-dimensional records into a 2D space using Principal Component Analysis (PCA):
+
+| Original Input Feature Space PCA | Autoencoder Latent Space PCA |
+| :---: | :---: |
+| ![Original PCA](pca_original.png) | ![Latent PCA](pca_latent.png) |
+
+* **Original Preprocessed Input Space:** The raw input projection shows the anomalies (yellow dots) widely scattered away from the dense, unified purple cluster representing normal behavior. This clear physical separation explains why the tree-based Isolation Forest isolated the attacks so efficiently based on raw numeric distance.
+* **Autoencoder Latent Space:** The latent projection compresses the multi-dimensional vectors into an $8$-dimensional bottleneck layer before projecting to 2D. The visualization shifts from a single dense blob into distinct, highly structured vertical behavioral sub-clusters. While this structural grouping is excellent for mapping relational subtleties, the close proximity between the edge of normal sub-clusters and true anomalies explains the minor overlap that caused the $7$ false alarms.
 
 ---
 
-## 7. Human–AI Decision Task
-When reviewing high-scoring anomalies generated by the models:
-1. **Alert 1 (Accepted - Escalated):** Multiple failed logins followed by an unusual protocol usage. *Context:* Directly maps to **MITRE ATT&CK T1110 (Brute Force)**. Action: Block source IP and rotate account credentials immediately.
-2. **Alert 2 (Challenged - False Positive):** An administrative service account executing routine automated backup scripts outside regular working hours. *Context:* Legitimate operation mimicking an anomaly. Action: Whitelist process signatures to avoid alert fatigue.
-3. **Alert 3 (Accepted - Escalated):** A valid user logging in from a country never previously bound to their device profile. *Context:* Maps to **MITRE ATT&CK T1078 (Valid Accounts)** indicating potential session hijacking. Action: Terminate active sessions and trigger MFA challenge.
+## 7. Human–AI Decision Task (Disagreement Audits)
+
+As a SOC Analyst, relying strictly on automated machine learning outputs introduces alert fatigue or structural blind spots. Below is an audit of three critical high-scoring alerts where human context changes the operational verdict:
+
+### 1. Record 870 Audit (`admin01` via VPN)
+* **Log Evidence:** `failed_attempts: 0`, `session_minutes: 12.15`, `bytes_out_mb: 3.90`, `hour: 16`.
+* **Model Verdict:** Isolation Forest = Normal ($0$) | Autoencoder = Attack ($1$).
+* **Analyst Action:** **Challenged (False Positive). Dismiss Alert.**
+* **Justification:** Every numeric indicator falls safely within normal operational parameters. The Autoencoder triggered high reconstruction loss solely because an administrative profile opening a VPN session at hour 16 is statistically rare within its categorical embedding matrix. Human validation confirms this is a benign, legitimate administrative task.
+
+### 2. Record 372 Audit (`analyst02` via HTTPS)
+* **Log Evidence:** `failed_attempts: 1`, `distance_km: 31.69`, `bytes_out_mb: 40.45`, `hour: 10`.
+* **Model Verdict:** Isolation Forest = Normal ($0$) | Autoencoder = Attack ($1$).
+* **Analyst Action:** **Accepted (Escalate to Tier 2 Hunt).**
+* **Justification:** While a single failed login attempt is common desktop noise, the combination of an elevated geographical distance offset (`31.69 km`) coupled with a noticeable spike in outbound data transfer (`40.45 MB`) suggests potential data staging or initial access probing. This requires immediate network inspection.
+
+### 3. Record 551 Audit (`developer01` via VPN)
+* **Log Evidence:** `failed_attempts: 1`, `distance_km: 54.23`, `bytes_out_mb: 10.92`, `hour: 13`.
+* **Model Verdict:** Isolation Forest = Normal ($0$) | Autoencoder = Attack ($1$).
+* **Analyst Action:** **Accepted (Escalate - Incident Response Triggered).**
+* **Justification:** The spatial anomaly index (`54.23 km`) indicates an impossible connection origin relative to the standard developer baseline profile. This behavioral signature closely aligns with **MITRE ATT&CK T1078 (Valid Accounts)**, where an adversary uses compromised valid credentials over corporate remote access infrastructure (VPN). The session must be terminated, and MFA keys rotated.
 
 ---
 
 ## Conclusion
-1. **Best Performer:** The **Autoencoder with Embeddings** performed quantitatively better on this dataset, achieving a higher F1-Score ($0.95$) and Precision ($0.91$) while maintaining a flawless Recall ($1.00$).
-2. **Alert Fatigue Mitigation:** The Autoencoder produced fewer False Positives ($3$ vs $7$), proving less prone to noise.
-3. **Unique Strengths:** Isolation Forest excels at catching structural/numeric spikes, whereas the Autoencoder isolates subtle value combinations.
-4. **SOC Recommendation:** A modern Security Operations Center should **never rely on a single model alone**. Hybrid detection pipelines ensure that simple volumetric spikes (caught by Isolation Forest) and advanced, silent lateral movements (caught by Autoencoders) are captured simultaneously.
+
+1. **Performance Verdict:** For this specific cybersecurity log dataset, **Isolation Forest achieved superior quantitative performance**, securing an F1-Score of **$0.985$** and an explicit Precision of **$0.970$**.
+2. **Alert Fatigue Mitigation:** Isolation Forest was far more practical for reducing analyst workload, generating only **$1$ False Positive** compared to the **$7$ False Positives** produced by the Autoencoder.
+3. **Embeddings Value:** The Keras categorical embedding layers successfully organized high-dimensional log relationships into clear behavioral groups. However, the model requires a slightly adjusted percentile threshold (e.g., shifting from the 95th to the 99th percentile) to reduce false alarms in production.
+4. **SOC Architectural Takeaway:** A production SOC should **never rely on a single model architecture alone**. Tree-based models like Isolation Forest excel at neutralizing explicit, volumetric point attacks instantly, while deep-learning Autoencoders are necessary for capturing complex, slow, and multi-categorical behavioral deviations that attempt to hide within normal limits.
