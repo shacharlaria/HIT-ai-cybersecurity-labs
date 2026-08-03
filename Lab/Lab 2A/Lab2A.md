@@ -7,7 +7,7 @@ This repository contains the results of Lab 2A, focusing on interpreting AI-driv
 ### 1. Infrastructure Backbone (Redpanda / Kafka)
 The lab uses Docker to host a Redpanda cluster as the real-time message broker, ingesting raw security telemetry and streaming it to the detection and agent orchestration engines.
 
-![Redpanda Cluster Status](screenshots/01_redpanda_cluster.png)
+![Redpanda Cluster Status](01_redpanda_cluster.png)
 *Figure 1: Redpanda Console verifying that the cluster and message brokers are running.*
 
 ---
@@ -15,7 +15,7 @@ The lab uses Docker to host a Redpanda cluster as the real-time message broker, 
 ### 2. Detection & SOC Analyst Dashboard
 The stream of events is evaluated in real time. Anomalies are scored and presented on the Streamlit Analyst Dashboard (`Morpheus Lite Agentic SOC Dashboard`), allowing analysts to inspect pending human reviews.
 
-![SOC Dashboard Overview](screenshots/02_soc_dashboard.png)
+![SOC Dashboard Overview](02_soc_dashboard.png)
 *Figure 2: SOC Dashboard showing ingested cases, high-risk flags, and pending reviews.*
 
 ---
@@ -26,7 +26,7 @@ When inspecting a specific case, the dashboard provides the analytical breakdown
 * **RAI Decision:** Governance agent ensuring safe mitigation policies.
 * **Meta-AI Review:** Supervisory agent verifying inference quality and uncertainty.
 
-![Case Analysis, RAI, and Meta-AI Review](screenshots/03_case_analysis.png)
+![Case Analysis, RAI, and Meta-AI Review](03_case_analysis.png)
 *Figure 3: Deep-dive view showing Evidence context, RAI policy recommendations, and Meta-AI review.*
 
 ---
