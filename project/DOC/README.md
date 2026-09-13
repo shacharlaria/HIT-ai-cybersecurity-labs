@@ -140,7 +140,7 @@ To stop all running services:
 ---
 
 ## 📂 Repository Structure
-
+```
 HIT-ai-cybersecurity-labs/
 ├── dashboard.py           # Streamlit web dashboard & telemetry visualizers
 ├── detector.py            # Core hybrid detector (Signatures + Isolation Forest + STIX)
@@ -154,7 +154,7 @@ HIT-ai-cybersecurity-labs/
 ├── docs/                  # Architectural diagrams & dashboard assets
 │   └── dashboard.png
 └── README.md              # Project documentation
-
+```
 ---
 
 ## 👨‍💻 Academic Information & Credits
