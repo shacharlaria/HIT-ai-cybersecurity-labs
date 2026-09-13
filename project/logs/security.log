@@ -1,0 +1,338 @@
+2026-09-13T17:11:26 WARN Failed password for root from 172.18.0.21 port 44640 ssh2
+2026-09-13T17:11:26 WARN Failed password for root from 172.18.0.21 port 44641 ssh2
+2026-09-13T17:11:26 WARN Failed password for root from 172.18.0.21 port 44642 ssh2
+2026-09-13T17:11:36 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:11:46 WARN Failed password for root from 172.18.0.22 port 43575 ssh2
+2026-09-13T17:11:46 WARN Failed password for root from 172.18.0.22 port 43576 ssh2
+2026-09-13T17:11:46 WARN Failed password for root from 172.18.0.22 port 43577 ssh2
+2026-09-13T17:11:56 INFO User analyst logged in successfully from 172.18.0.10
+2026-09-13T17:12:06 WARN Failed password for root from 172.18.0.21 port 46615 ssh2
+2026-09-13T17:12:06 WARN Failed password for root from 172.18.0.21 port 46616 ssh2
+2026-09-13T17:12:06 WARN Failed password for root from 172.18.0.21 port 46617 ssh2
+2026-09-13T17:12:16 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:12:26 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:12:36 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:12:46 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:12:56 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:13:06 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:13:16 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:13:26 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T17:13:36 WARN Failed password for root from 172.18.0.22 port 44241 ssh2
+2026-09-13T17:13:36 WARN Failed password for root from 172.18.0.22 port 44242 ssh2
+2026-09-13T17:13:36 WARN Failed password for root from 172.18.0.22 port 44243 ssh2
+2026-09-13T17:13:46 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:13:56 WARN Failed password for root from 172.18.0.21 port 48970 ssh2
+2026-09-13T17:13:56 WARN Failed password for root from 172.18.0.21 port 48971 ssh2
+2026-09-13T17:13:56 WARN Failed password for root from 172.18.0.21 port 48972 ssh2
+2026-09-13T17:14:06 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T17:14:16 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:14:26 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:14:36 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:14:46 WARN Failed password for root from 172.18.0.23 port 46827 ssh2
+2026-09-13T17:14:46 WARN Failed password for root from 172.18.0.23 port 46828 ssh2
+2026-09-13T17:14:46 WARN Failed password for root from 172.18.0.23 port 46829 ssh2
+2026-09-13T17:14:56 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T17:15:06 WARN Failed password for root from 172.18.0.22 port 46873 ssh2
+2026-09-13T17:15:06 WARN Failed password for root from 172.18.0.22 port 46874 ssh2
+2026-09-13T17:15:06 WARN Failed password for root from 172.18.0.22 port 46875 ssh2
+2026-09-13T17:15:16 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:15:26 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T17:15:36 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T17:15:46 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:15:56 WARN Failed password for root from 172.18.0.21 port 47079 ssh2
+2026-09-13T17:15:56 WARN Failed password for root from 172.18.0.21 port 47080 ssh2
+2026-09-13T17:15:56 WARN Failed password for root from 172.18.0.21 port 47081 ssh2
+2026-09-13T17:16:06 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:16:17 WARN Failed password for root from 172.18.0.21 port 46484 ssh2
+2026-09-13T17:16:17 WARN Failed password for root from 172.18.0.21 port 46485 ssh2
+2026-09-13T17:16:17 WARN Failed password for root from 172.18.0.21 port 46486 ssh2
+2026-09-13T17:16:27 WARN Failed password for root from 172.18.0.21 port 48887 ssh2
+2026-09-13T17:16:27 WARN Failed password for root from 172.18.0.21 port 48888 ssh2
+2026-09-13T17:16:27 WARN Failed password for root from 172.18.0.21 port 48889 ssh2
+2026-09-13T17:16:37 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:16:47 WARN Failed password for root from 172.18.0.23 port 46606 ssh2
+2026-09-13T17:16:47 WARN Failed password for root from 172.18.0.23 port 46607 ssh2
+2026-09-13T17:16:47 WARN Failed password for root from 172.18.0.23 port 46608 ssh2
+2026-09-13T17:16:57 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:17:07 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:17:17 WARN Failed password for root from 172.18.0.23 port 47010 ssh2
+2026-09-13T17:17:17 WARN Failed password for root from 172.18.0.23 port 47011 ssh2
+2026-09-13T17:17:17 WARN Failed password for root from 172.18.0.23 port 47012 ssh2
+2026-09-13T17:17:27 WARN Failed password for root from 172.18.0.23 port 43461 ssh2
+2026-09-13T17:17:27 WARN Failed password for root from 172.18.0.23 port 43462 ssh2
+2026-09-13T17:17:27 WARN Failed password for root from 172.18.0.23 port 43463 ssh2
+2026-09-13T17:17:37 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:17:47 WARN Failed password for root from 172.18.0.22 port 48759 ssh2
+2026-09-13T17:17:47 WARN Failed password for root from 172.18.0.22 port 48760 ssh2
+2026-09-13T17:17:47 WARN Failed password for root from 172.18.0.22 port 48761 ssh2
+2026-09-13T17:17:57 WARN Failed password for root from 172.18.0.22 port 48158 ssh2
+2026-09-13T17:17:57 WARN Failed password for root from 172.18.0.22 port 48159 ssh2
+2026-09-13T17:17:57 WARN Failed password for root from 172.18.0.22 port 48160 ssh2
+2026-09-13T17:35:03 WARN Failed password for root from 172.18.0.22 port 45676 ssh2
+2026-09-13T17:35:03 WARN Failed password for root from 172.18.0.22 port 45677 ssh2
+2026-09-13T17:35:03 WARN Failed password for root from 172.18.0.22 port 45678 ssh2
+2026-09-13T17:35:13 WARN Failed password for root from 172.18.0.21 port 47467 ssh2
+2026-09-13T17:35:13 WARN Failed password for root from 172.18.0.21 port 47468 ssh2
+2026-09-13T17:35:13 WARN Failed password for root from 172.18.0.21 port 47469 ssh2
+2026-09-13T17:35:23 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:35:33 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:35:43 INFO User analyst logged in successfully from 172.18.0.10
+2026-09-13T17:35:53 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:36:03 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:36:13 INFO User administrator logged in successfully from 172.18.0.11
+2026-09-13T17:36:23 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:36:33 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T17:36:43 WARN Failed password for root from 172.18.0.22 port 44483 ssh2
+2026-09-13T17:36:43 WARN Failed password for root from 172.18.0.22 port 44484 ssh2
+2026-09-13T17:36:43 WARN Failed password for root from 172.18.0.22 port 44485 ssh2
+2026-09-13T17:36:53 INFO Network scan detected from 172.18.0.33 against ports 22,80,443,3306
+2026-09-13T17:37:03 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:37:13 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T17:37:23 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:37:33 WARN Failed password for root from 172.18.0.23 port 45848 ssh2
+2026-09-13T17:37:33 WARN Failed password for root from 172.18.0.23 port 45849 ssh2
+2026-09-13T17:37:33 WARN Failed password for root from 172.18.0.23 port 45850 ssh2
+2026-09-13T17:37:43 INFO User administrator logged in successfully from 172.18.0.12
+2026-09-13T17:37:53 INFO User administrator logged in successfully from 172.18.0.11
+2026-09-13T17:38:03 WARN Failed password for root from 172.18.0.23 port 43049 ssh2
+2026-09-13T17:38:03 WARN Failed password for root from 172.18.0.23 port 43050 ssh2
+2026-09-13T17:38:03 WARN Failed password for root from 172.18.0.23 port 43051 ssh2
+2026-09-13T17:38:13 WARN Failed password for root from 172.18.0.23 port 43767 ssh2
+2026-09-13T17:38:13 WARN Failed password for root from 172.18.0.23 port 43768 ssh2
+2026-09-13T17:38:13 WARN Failed password for root from 172.18.0.23 port 43769 ssh2
+2026-09-13T17:38:23 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:38:33 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:38:43 WARN Failed password for root from 172.18.0.23 port 47885 ssh2
+2026-09-13T17:38:43 WARN Failed password for root from 172.18.0.23 port 47886 ssh2
+2026-09-13T17:38:43 WARN Failed password for root from 172.18.0.23 port 47887 ssh2
+2026-09-13T17:38:53 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:39:13 WARN Failed password for root from 172.18.0.22 port 45083 ssh2
+2026-09-13T17:39:13 WARN Failed password for root from 172.18.0.22 port 45084 ssh2
+2026-09-13T17:39:13 WARN Failed password for root from 172.18.0.22 port 45085 ssh2
+2026-09-13T17:39:23 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:39:33 WARN Failed password for root from 172.18.0.21 port 47492 ssh2
+2026-09-13T17:39:33 WARN Failed password for root from 172.18.0.21 port 47493 ssh2
+2026-09-13T17:39:33 WARN Failed password for root from 172.18.0.21 port 47494 ssh2
+2026-09-13T17:39:43 INFO User administrator logged in successfully from 172.18.0.12
+2026-09-13T17:39:53 WARN Failed password for root from 172.18.0.23 port 43737 ssh2
+2026-09-13T17:39:53 WARN Failed password for root from 172.18.0.23 port 43738 ssh2
+2026-09-13T17:39:53 WARN Failed password for root from 172.18.0.23 port 43739 ssh2
+2026-09-13T17:40:03 WARN Failed password for root from 172.18.0.21 port 46945 ssh2
+2026-09-13T17:40:03 WARN Failed password for root from 172.18.0.21 port 46946 ssh2
+2026-09-13T17:40:03 WARN Failed password for root from 172.18.0.21 port 46947 ssh2
+2026-09-13T17:40:13 WARN Failed password for root from 172.18.0.23 port 46152 ssh2
+2026-09-13T17:40:13 WARN Failed password for root from 172.18.0.23 port 46153 ssh2
+2026-09-13T17:40:13 WARN Failed password for root from 172.18.0.23 port 46154 ssh2
+2026-09-13T17:40:23 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:40:33 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:40:43 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:40:53 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:41:03 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:41:13 WARN Failed password for root from 172.18.0.23 port 46783 ssh2
+2026-09-13T17:41:13 WARN Failed password for root from 172.18.0.23 port 46784 ssh2
+2026-09-13T17:41:13 WARN Failed password for root from 172.18.0.23 port 46785 ssh2
+2026-09-13T17:41:23 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:41:33 INFO Network scan detected from 172.18.0.33 against ports 22,80,443,3306
+2026-09-13T17:41:43 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:41:53 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:42:03 WARN Failed password for root from 172.18.0.22 port 48656 ssh2
+2026-09-13T17:42:03 WARN Failed password for root from 172.18.0.22 port 48657 ssh2
+2026-09-13T17:42:03 WARN Failed password for root from 172.18.0.22 port 48658 ssh2
+2026-09-13T17:42:13 INFO User administrator logged in successfully from 172.18.0.12
+2026-09-13T17:42:32 WARN Failed password for root from 172.18.0.22 port 44755 ssh2
+2026-09-13T17:42:32 WARN Failed password for root from 172.18.0.22 port 44756 ssh2
+2026-09-13T17:42:32 WARN Failed password for root from 172.18.0.22 port 44757 ssh2
+2026-09-13T17:42:42 INFO Network scan detected from 172.18.0.31 against ports 21,22,23,25
+2026-09-13T17:42:52 INFO User administrator logged in successfully from 172.18.0.11
+2026-09-13T17:43:02 WARN Failed password for root from 172.18.0.21 port 48723 ssh2
+2026-09-13T17:43:02 WARN Failed password for root from 172.18.0.21 port 48724 ssh2
+2026-09-13T17:43:02 WARN Failed password for root from 172.18.0.21 port 48725 ssh2
+2026-09-13T17:43:12 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T17:43:22 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T17:43:32 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:43:42 WARN Failed password for root from 172.18.0.22 port 43337 ssh2
+2026-09-13T17:43:42 WARN Failed password for root from 172.18.0.22 port 43338 ssh2
+2026-09-13T17:43:42 WARN Failed password for root from 172.18.0.22 port 43339 ssh2
+2026-09-13T17:43:52 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:44:02 INFO User analyst logged in successfully from 172.18.0.10
+2026-09-13T17:44:12 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:44:22 WARN Failed password for root from 172.18.0.23 port 47679 ssh2
+2026-09-13T17:44:22 WARN Failed password for root from 172.18.0.23 port 47680 ssh2
+2026-09-13T17:44:22 WARN Failed password for root from 172.18.0.23 port 47681 ssh2
+2026-09-13T17:44:32 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T17:44:42 WARN Failed password for root from 172.18.0.21 port 43796 ssh2
+2026-09-13T17:44:42 WARN Failed password for root from 172.18.0.21 port 43797 ssh2
+2026-09-13T17:44:42 WARN Failed password for root from 172.18.0.21 port 43798 ssh2
+2026-09-13T17:44:52 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:45:02 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T17:45:12 WARN Failed password for root from 172.18.0.21 port 48044 ssh2
+2026-09-13T17:45:12 WARN Failed password for root from 172.18.0.21 port 48045 ssh2
+2026-09-13T17:45:12 WARN Failed password for root from 172.18.0.21 port 48046 ssh2
+2026-09-13T17:45:22 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:45:32 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T17:45:42 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T17:45:52 WARN Failed password for root from 172.18.0.22 port 48601 ssh2
+2026-09-13T17:45:52 WARN Failed password for root from 172.18.0.22 port 48602 ssh2
+2026-09-13T17:45:52 WARN Failed password for root from 172.18.0.22 port 48603 ssh2
+2026-09-13T17:46:02 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:46:12 WARN Failed password for root from 172.18.0.23 port 47945 ssh2
+2026-09-13T17:46:12 WARN Failed password for root from 172.18.0.23 port 47946 ssh2
+2026-09-13T17:46:12 WARN Failed password for root from 172.18.0.23 port 47947 ssh2
+2026-09-13T17:46:22 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T17:46:32 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:46:42 WARN Failed password for root from 172.18.0.22 port 48314 ssh2
+2026-09-13T17:46:42 WARN Failed password for root from 172.18.0.22 port 48315 ssh2
+2026-09-13T17:46:42 WARN Failed password for root from 172.18.0.22 port 48316 ssh2
+2026-09-13T17:46:52 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:47:02 WARN Failed password for root from 172.18.0.23 port 44430 ssh2
+2026-09-13T17:47:02 WARN Failed password for root from 172.18.0.23 port 44431 ssh2
+2026-09-13T17:47:02 WARN Failed password for root from 172.18.0.23 port 44432 ssh2
+2026-09-13T17:47:12 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:47:22 WARN Failed password for root from 172.18.0.21 port 44849 ssh2
+2026-09-13T17:47:22 WARN Failed password for root from 172.18.0.21 port 44850 ssh2
+2026-09-13T17:47:22 WARN Failed password for root from 172.18.0.21 port 44851 ssh2
+2026-09-13T17:47:32 WARN Failed password for root from 172.18.0.21 port 44917 ssh2
+2026-09-13T17:47:32 WARN Failed password for root from 172.18.0.21 port 44918 ssh2
+2026-09-13T17:47:32 WARN Failed password for root from 172.18.0.21 port 44919 ssh2
+2026-09-13T17:47:42 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T17:47:52 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:48:02 INFO User administrator logged in successfully from 172.18.0.12
+2026-09-13T17:48:12 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:48:22 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:48:32 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:48:42 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T17:48:52 INFO Network scan detected from 172.18.0.31 against ports 53,80,443,8080
+2026-09-13T17:49:02 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T17:49:12 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T17:49:22 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:49:32 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:49:42 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:49:53 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:50:03 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:50:13 WARN Failed password for root from 172.18.0.22 port 44529 ssh2
+2026-09-13T17:50:13 WARN Failed password for root from 172.18.0.22 port 44530 ssh2
+2026-09-13T17:50:13 WARN Failed password for root from 172.18.0.22 port 44531 ssh2
+2026-09-13T17:50:23 INFO User analyst logged in successfully from 172.18.0.12
+2026-09-13T17:50:33 WARN Failed password for root from 172.18.0.22 port 44861 ssh2
+2026-09-13T17:50:33 WARN Failed password for root from 172.18.0.22 port 44862 ssh2
+2026-09-13T17:50:33 WARN Failed password for root from 172.18.0.22 port 44863 ssh2
+2026-09-13T17:50:43 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:50:53 INFO User analyst logged in successfully from 172.18.0.10
+2026-09-13T17:51:03 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T17:51:13 WARN Failed password for root from 172.18.0.22 port 43809 ssh2
+2026-09-13T17:51:13 WARN Failed password for root from 172.18.0.22 port 43810 ssh2
+2026-09-13T17:51:13 WARN Failed password for root from 172.18.0.22 port 43811 ssh2
+2026-09-13T17:51:23 INFO User administrator logged in successfully from 172.18.0.11
+2026-09-13T17:51:33 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:51:43 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T17:51:53 WARN Failed password for root from 172.18.0.23 port 45130 ssh2
+2026-09-13T17:51:53 WARN Failed password for root from 172.18.0.23 port 45131 ssh2
+2026-09-13T17:51:53 WARN Failed password for root from 172.18.0.23 port 45132 ssh2
+2026-09-13T17:52:03 WARN Failed password for root from 172.18.0.22 port 43283 ssh2
+2026-09-13T17:52:03 WARN Failed password for root from 172.18.0.22 port 43284 ssh2
+2026-09-13T17:52:03 WARN Failed password for root from 172.18.0.22 port 43285 ssh2
+2026-09-13T17:52:13 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T17:52:23 WARN Failed password for root from 172.18.0.23 port 48254 ssh2
+2026-09-13T17:52:23 WARN Failed password for root from 172.18.0.23 port 48255 ssh2
+2026-09-13T17:52:23 WARN Failed password for root from 172.18.0.23 port 48256 ssh2
+2026-09-13T17:52:33 WARN Failed password for root from 172.18.0.22 port 46064 ssh2
+2026-09-13T17:52:33 WARN Failed password for root from 172.18.0.22 port 46065 ssh2
+2026-09-13T17:52:33 WARN Failed password for root from 172.18.0.22 port 46066 ssh2
+2026-09-13T17:52:43 WARN Failed password for root from 172.18.0.21 port 46946 ssh2
+2026-09-13T17:52:43 WARN Failed password for root from 172.18.0.21 port 46947 ssh2
+2026-09-13T17:52:43 WARN Failed password for root from 172.18.0.21 port 46948 ssh2
+2026-09-13T17:53:19 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T17:53:29 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T17:53:39 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:53:49 WARN Failed password for root from 172.18.0.22 port 45295 ssh2
+2026-09-13T17:53:49 WARN Failed password for root from 172.18.0.22 port 45296 ssh2
+2026-09-13T17:53:49 WARN Failed password for root from 172.18.0.22 port 45297 ssh2
+2026-09-13T17:53:59 WARN Failed password for root from 172.18.0.23 port 46861 ssh2
+2026-09-13T17:53:59 WARN Failed password for root from 172.18.0.23 port 46862 ssh2
+2026-09-13T17:53:59 WARN Failed password for root from 172.18.0.23 port 46863 ssh2
+2026-09-13T17:54:09 WARN Failed password for root from 172.18.0.21 port 46587 ssh2
+2026-09-13T17:54:09 WARN Failed password for root from 172.18.0.21 port 46588 ssh2
+2026-09-13T17:54:09 WARN Failed password for root from 172.18.0.21 port 46589 ssh2
+2026-09-13T17:54:19 WARN Failed password for root from 172.18.0.22 port 46642 ssh2
+2026-09-13T17:54:19 WARN Failed password for root from 172.18.0.22 port 46643 ssh2
+2026-09-13T17:54:19 WARN Failed password for root from 172.18.0.22 port 46644 ssh2
+2026-09-13T17:54:29 WARN Failed password for root from 172.18.0.21 port 48014 ssh2
+2026-09-13T17:54:29 WARN Failed password for root from 172.18.0.21 port 48015 ssh2
+2026-09-13T17:54:29 WARN Failed password for root from 172.18.0.21 port 48016 ssh2
+2026-09-13T17:56:40 WARN Failed password for root from 172.18.0.23 port 47949 ssh2
+2026-09-13T17:56:40 WARN Failed password for root from 172.18.0.23 port 47950 ssh2
+2026-09-13T17:56:40 WARN Failed password for root from 172.18.0.23 port 47951 ssh2
+2026-09-13T17:56:50 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:57:00 WARN Failed password for root from 172.18.0.23 port 43921 ssh2
+2026-09-13T17:57:00 WARN Failed password for root from 172.18.0.23 port 43922 ssh2
+2026-09-13T17:57:00 WARN Failed password for root from 172.18.0.23 port 43923 ssh2
+2026-09-13T17:57:10 WARN Failed password for root from 172.18.0.22 port 46508 ssh2
+2026-09-13T17:57:10 WARN Failed password for root from 172.18.0.22 port 46509 ssh2
+2026-09-13T17:57:10 WARN Failed password for root from 172.18.0.22 port 46510 ssh2
+2026-09-13T17:57:20 WARN Failed password for root from 172.18.0.23 port 43945 ssh2
+2026-09-13T17:57:20 WARN Failed password for root from 172.18.0.23 port 43946 ssh2
+2026-09-13T17:57:20 WARN Failed password for root from 172.18.0.23 port 43947 ssh2
+2026-09-13T17:57:30 INFO User analyst logged in successfully from 172.18.0.10
+2026-09-13T17:57:40 INFO Network scan detected from 172.18.0.31 against ports 53,80,443,8080
+2026-09-13T17:57:50 INFO User analyst logged in successfully from 172.18.0.11
+2026-09-13T17:58:00 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:58:10 INFO Network scan detected from 172.18.0.31 against ports 21,22,23,25
+2026-09-13T17:58:20 INFO Network scan detected from 172.18.0.31 against ports 21,22,23,25
+2026-09-13T17:58:30 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T17:58:40 WARN Failed password for root from 172.18.0.22 port 48166 ssh2
+2026-09-13T17:58:40 WARN Failed password for root from 172.18.0.22 port 48167 ssh2
+2026-09-13T17:58:40 WARN Failed password for root from 172.18.0.22 port 48168 ssh2
+2026-09-13T17:58:50 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T17:59:01 WARN Failed password for root from 172.18.0.23 port 45947 ssh2
+2026-09-13T17:59:01 WARN Failed password for root from 172.18.0.23 port 45948 ssh2
+2026-09-13T17:59:01 WARN Failed password for root from 172.18.0.23 port 45949 ssh2
+2026-09-13T17:59:11 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T17:59:21 WARN Failed password for root from 172.18.0.21 port 44537 ssh2
+2026-09-13T17:59:21 WARN Failed password for root from 172.18.0.21 port 44538 ssh2
+2026-09-13T17:59:21 WARN Failed password for root from 172.18.0.21 port 44539 ssh2
+2026-09-13T17:59:31 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T17:59:41 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T17:59:51 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T18:00:01 WARN Failed password for root from 172.18.0.22 port 44587 ssh2
+2026-09-13T18:00:01 WARN Failed password for root from 172.18.0.22 port 44588 ssh2
+2026-09-13T18:00:01 WARN Failed password for root from 172.18.0.22 port 44589 ssh2
+2026-09-13T18:00:11 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T18:00:21 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T18:00:31 WARN Failed password for root from 172.18.0.22 port 47605 ssh2
+2026-09-13T18:00:31 WARN Failed password for root from 172.18.0.22 port 47606 ssh2
+2026-09-13T18:00:31 WARN Failed password for root from 172.18.0.22 port 47607 ssh2
+2026-09-13T18:00:41 INFO Network scan detected from 172.18.0.31 against ports 21,22,23,25
+2026-09-13T18:00:51 WARN Failed password for root from 172.18.0.21 port 46477 ssh2
+2026-09-13T18:00:51 WARN Failed password for root from 172.18.0.21 port 46478 ssh2
+2026-09-13T18:00:51 WARN Failed password for root from 172.18.0.21 port 46479 ssh2
+2026-09-13T18:01:01 WARN Failed password for root from 172.18.0.21 port 43439 ssh2
+2026-09-13T18:01:01 WARN Failed password for root from 172.18.0.21 port 43440 ssh2
+2026-09-13T18:01:01 WARN Failed password for root from 172.18.0.21 port 43441 ssh2
+2026-09-13T18:01:11 WARN Failed password for root from 172.18.0.23 port 43509 ssh2
+2026-09-13T18:01:11 WARN Failed password for root from 172.18.0.23 port 43510 ssh2
+2026-09-13T18:01:11 WARN Failed password for root from 172.18.0.23 port 43511 ssh2
+2026-09-13T18:01:21 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T18:01:31 INFO User administrator logged in successfully from 172.18.0.12
+2026-09-13T18:01:51 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T18:02:01 INFO User administrator logged in successfully from 172.18.0.10
+2026-09-13T18:02:11 INFO Network scan detected from 172.18.0.33 against ports 53,80,443,8080
+2026-09-13T18:02:21 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T18:02:31 INFO User student logged in successfully from 172.18.0.11
+2026-09-13T18:02:41 INFO Network scan detected from 172.18.0.31 against ports 22,80,443,3306
+2026-09-13T18:02:51 INFO Network scan detected from 172.18.0.32 against ports 21,22,23,25
+2026-09-13T18:03:01 INFO User student logged in successfully from 172.18.0.12
+2026-09-13T18:03:11 INFO User student logged in successfully from 172.18.0.10
+2026-09-13T18:03:21 INFO User administrator logged in successfully from 172.18.0.12
+2026-09-13T18:03:31 WARN Failed password for root from 172.18.0.23 port 47742 ssh2
+2026-09-13T18:03:31 WARN Failed password for root from 172.18.0.23 port 47743 ssh2
+2026-09-13T18:03:31 WARN Failed password for root from 172.18.0.23 port 47744 ssh2
+2026-09-13T18:03:41 INFO Network scan detected from 172.18.0.32 against ports 53,80,443,8080
+2026-09-13T18:03:51 INFO Network scan detected from 172.18.0.31 against ports 21,22,23,25
+2026-09-13T18:04:01 INFO Network scan detected from 172.18.0.32 against ports 22,80,443,3306
+2026-09-13T18:04:11 WARN Failed password for root from 172.18.0.21 port 43840 ssh2
+2026-09-13T18:04:11 WARN Failed password for root from 172.18.0.21 port 43841 ssh2
+2026-09-13T18:04:11 WARN Failed password for root from 172.18.0.21 port 43842 ssh2
+2026-09-13T18:04:21 INFO Network scan detected from 172.18.0.33 against ports 21,22,23,25
+2026-09-13T18:04:31 WARN Failed password for root from 172.18.0.23 port 43729 ssh2
+2026-09-13T18:04:31 WARN Failed password for root from 172.18.0.23 port 43730 ssh2
+2026-09-13T18:04:31 WARN Failed password for root from 172.18.0.23 port 43731 ssh2
