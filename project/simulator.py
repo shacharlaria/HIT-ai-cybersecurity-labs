@@ -27,22 +27,18 @@ def timestamp() -> str:
 
 
 def generate_bruteforce() -> list[str]:
-    source_ip = random.choice(
-        ["172.18.0.21", "172.18.0.22", "172.18.0.23"]
-    )
+    source_ip = random.choice(["172.18.0.21", "172.18.0.22", "172.18.0.23"])
     start_port = random.randint(43000, 49000)
+    burst_count = random.randint(3, 6)
 
     return [
-        f"{timestamp()} WARN Failed password for root from "
-        f"{source_ip} port {start_port + i} ssh2"
-        for i in range(3)
+        f"{timestamp()} WARN Failed password for root from {source_ip} port {start_port + i} ssh2"
+        for i in range(burst_count)
     ]
 
 
 def generate_network_scan() -> list[str]:
-    source_ip = random.choice(
-        ["172.18.0.31", "172.18.0.32", "172.18.0.33"]
-    )
+    source_ip = random.choice(["172.18.0.31", "172.18.0.32", "172.18.0.33"])
     ports = random.choice(
         [
             "21,22,23,25",
@@ -52,21 +48,27 @@ def generate_network_scan() -> list[str]:
     )
 
     return [
-        f"{timestamp()} INFO Network scan detected from "
-        f"{source_ip} against ports {ports}"
+        f"{timestamp()} INFO Network scan detected from {source_ip} against ports {ports}"
     ]
 
 
 def generate_normal_activity() -> list[str]:
     source_ip = random.choice(
-        ["172.18.0.10", "172.18.0.11", "172.18.0.12"]
+        [
+            "172.18.0.10",
+            "172.18.0.11",
+            "172.18.0.12",
+            "172.18.0.13",
+            "172.18.0.14",
+        ]
     )
-    user = random.choice(["student", "analyst", "administrator"])
-
-    return [
-        f"{timestamp()} INFO User {user} logged in successfully "
-        f"from {source_ip}"
+    user = random.choice(["student", "analyst", "administrator", "developer"])
+    actions = [
+        f"{timestamp()} INFO User {user} logged in successfully from {source_ip}",
+        f"{timestamp()} INFO Session keep-alive received from {source_ip}",
+        f"{timestamp()} INFO User {user} logged out from {source_ip}",
     ]
+    return [random.choice(actions)]
 
 
 def append_events(events: list[str]) -> None:
@@ -84,19 +86,20 @@ def append_events(events: list[str]) -> None:
 
 def main() -> None:
     print(
-        f"Synthetic log simulator started. "
-        f"Interval: {INTERVAL_SECONDS} seconds.",
+        f"Synthetic log simulator started. Interval: {INTERVAL_SECONDS} seconds.",
         flush=True,
     )
 
     generators = [
+        generate_normal_activity,
         generate_bruteforce,
         generate_network_scan,
-        generate_normal_activity,
     ]
+    # 70% Normal baseline, 15% Brute Force, 15% Network Scan
+    weights = [0.70, 0.15, 0.15]
 
     while running:
-        generator = random.choice(generators)
+        generator = random.choices(generators, weights=weights, k=1)[0]
         append_events(generator())
 
         for _ in range(INTERVAL_SECONDS):
