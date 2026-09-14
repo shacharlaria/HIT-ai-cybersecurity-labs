@@ -152,12 +152,15 @@ def create_candidate_findings(log_path: Path) -> list[dict[str, Any]]:
 
     for line_number, line in enumerate(lines, start=1):
         normalized = line.lower()
-        if "failed password" in normalized:
-            failed_password_sources[extract_source_ip(line)] += 1
+        source_ip = extract_source_ip(line)
+
+        if "failed password" in normalized and source_ip != "unknown":
+            failed_password_sources[source_ip] += 1
+
         if "network scan detected" in normalized:
             findings.append({
                 "finding": "Possible network service discovery",
-                "source_ip": extract_source_ip(line),
+                "source_ip": source_ip,
                 "candidate_mitre_technique": "T1046",
                 "severity": "Medium",
                 "detection_type": "Signature-based",
@@ -191,12 +194,17 @@ def create_isolation_forest_findings(log_path: Path) -> list[dict[str, Any]]:
     ip_stats = defaultdict(lambda: {"total": 0, "failed_pwd": 0, "total_len": 0})
     for line in lines:
         ip = extract_source_ip(line)
+        if ip == "unknown":
+            continue
         ip_stats[ip]["total"] += 1
         ip_stats[ip]["total_len"] += len(line)
         if "failed password" in line.lower():
             ip_stats[ip]["failed_pwd"] += 1
 
     ips = list(ip_stats.keys())
+    if len(ips) < 3:
+        return []
+
     X = []
     for ip in ips:
         stats = ip_stats[ip]
@@ -204,7 +212,7 @@ def create_isolation_forest_findings(log_path: Path) -> list[dict[str, Any]]:
         X.append([stats["total"], stats["failed_pwd"], avg_len])
 
     X_arr = np.array(X)
-    contamination = min(0.2, max(0.01, 1.0 / len(ips))) if len(ips) > 0 else 0.1
+    contamination = min(0.25, max(0.05, 1.0 / len(ips)))
     model = IsolationForest(contamination=contamination, random_state=42)
     predictions = model.fit_predict(X_arr)
     scores = model.decision_function(X_arr)
@@ -219,7 +227,7 @@ def create_isolation_forest_findings(log_path: Path) -> list[dict[str, Any]]:
                 "candidate_mitre_technique": "T1078",
                 "severity": "Medium-High",
                 "detection_type": "Anomaly-based (Isolation Forest)",
-                "evidence": f"IP {ip} outlier behavior. Total: {X_arr[idx][0]}, Failed pwd: {X_arr[idx][1]}",
+                "evidence": f"IP {ip} outlier: Volume={X_arr[idx][0]}, FailedAuth={X_arr[idx][1]}, AvgLen={round(X_arr[idx][2], 1)}",
                 "detection_rule": "Isolation Forest multivariate outlier detection.",
                 "mitre_lookup_status": "Requires Analyst Review (Uncertainty / Heuristic Mapping)"
             })
@@ -253,32 +261,23 @@ def enrich_findings_with_mitre(findings: list[dict[str, Any]]) -> list[dict[str,
     return enriched
 
 
-def calculate_research_metrics(findings: list[dict[str, Any]]) -> dict[str, Any]:
-    total_findings = len(findings)
-
-    if total_findings > 0:
-        tp = int(total_findings * 0.88)
-        fp = total_findings - tp
-        fn = 2
-        tn = 45
-    else:
-        tp, fp, fn, tn = 0, 0, 0, 50
-
-    precision = tp / (tp + fp) if (tp + fp) > 0 else 0.0
-    recall = tp / (tp + fn) if (tp + fn) > 0 else 0.0
-    f1 = (2 * precision * recall) / (precision + recall) if (precision + recall) > 0 else 0.0
-    fpr = fp / (fp + tn) if (fp + tn) > 0 else 0.0
+def extract_operational_summary(findings: list[dict[str, Any]]) -> dict[str, Any]:
+    sig_count = sum(1 for f in findings if f.get("detection_type") == "Signature-based")
+    ml_count = sum(1 for f in findings if "Isolation Forest" in f.get("detection_type", ""))
+    high_sev = sum(1 for f in findings if f.get("severity") == "High")
+    med_sev = sum(1 for f in findings if "Medium" in f.get("severity", ""))
 
     return {
-        "Precision": round(float(precision), 4),
-        "Recall": round(float(recall), 4),
-        "F1-Score": round(float(f1), 4),
-        "False Positive Rate (FPR)": round(float(fpr), 4),
-        "TP": tp, "FP": fp, "FN": fn, "TN": tn
+        "total_active_findings": len(findings),
+        "signature_detections": sig_count,
+        "anomaly_detections": ml_count,
+        "high_severity_count": high_sev,
+        "medium_severity_count": med_sev,
+        "pipeline_status": "Operational (Real-time Evaluation via evaluator.py)"
     }
 
 
-def save_findings(findings: list[dict[str, Any]], metrics_dict: dict[str, Any]) -> None:
+def save_findings(findings: list[dict[str, Any]], summary_dict: dict[str, Any]) -> None:
     OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -292,13 +291,13 @@ def save_findings(findings: list[dict[str, Any]], metrics_dict: dict[str, Any]) 
             "status": "Loaded" if mitre_source_path else "Not available",
         },
         "findings": findings,
-        "evaluation_metrics": metrics_dict,
+        "operational_summary": summary_dict,
     }
     OUTPUT_PATH.write_text(json.dumps(payload, indent=2), encoding="utf-8")
 
 
 def main() -> None:
-    print("LAB 1A - HYBRID SOC DETECTOR", flush=True)
+    print("HYBRID SOC DETECTOR ENGINE STARTED", flush=True)
     while running:
         refresh_mitre_index()
         try:
@@ -307,8 +306,8 @@ def main() -> None:
             candidates = rule_candidates + ml_candidates
             findings = enrich_findings_with_mitre(candidates)
 
-            metrics_dict = calculate_research_metrics(findings)
-            save_findings(findings, metrics_dict)
+            summary_dict = extract_operational_summary(findings)
+            save_findings(findings, summary_dict)
 
             print(f"Scan complete: {len(findings)} finding(s).", flush=True)
         except Exception as exc:
