@@ -148,6 +148,7 @@ git clone [https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git](https:
 cd HIT-ai-cybersecurity-labs/project
 ```
 
+
 ### 2. Build and Launch Containers
 ```bash
 docker compose up --build -d
