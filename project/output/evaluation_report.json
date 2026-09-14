@@ -1,0 +1,20 @@
+{
+  "evaluation_timestamp": "2026-09-14T15:09:49Z",
+  "detection_accuracy_metrics": {
+    "Precision": 0.8657,
+    "Recall": 0.9667,
+    "F1-Score": 0.9134,
+    "False Positive Rate (FPR)": 0.1667,
+    "True Positives (TP)": 58,
+    "False Positives (FP)": 9,
+    "True Negatives (TN)": 45,
+    "False Negatives (FN)": 2,
+    "Total Evaluated Events": 114
+  },
+  "model_performance_benchmarks": {
+    "Average Inference Time (s)": 0.01327,
+    "Throughput (Samples/sec)": 113038.97,
+    "Evaluated Batch Size": 1500,
+    "Iterations": 10
+  }
+}
