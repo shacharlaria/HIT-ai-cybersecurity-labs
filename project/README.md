@@ -144,7 +144,7 @@ In accordance with academic evaluation criteria, the interaction between unsuper
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git](https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git)
+git clone https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git
 cd HIT-ai-cybersecurity-labs/project
 ```
 
