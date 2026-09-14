@@ -49,6 +49,9 @@ The **Hybrid SOC Threat Detector** addresses these challenges by deploying a con
    │       Streamlit SOC Dashboard UI       │
    │ (Real-time Telemetry, Charts & Tables) │
    └────────────────────────────────────────┘
+```
+
+---
 
 ## 🔬 Feature Engineering & Behavioral Analysis
 
@@ -143,6 +146,53 @@ In accordance with academic evaluation criteria, the interaction between unsuper
 ```bash
 git clone [https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git](https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git)
 cd HIT-ai-cybersecurity-labs/project
+```
+
 ### 2. Build and Launch Containers
 ```bash
 docker compose up --build -d
+```
+
+### 3. Access the SOC Console
+Once initialization completes, open your browser at: **`http://localhost:8000`**
+
+To run the offline evaluation benchmark:
+```bash
+docker compose run --rm detector python evaluator.py
+```
+
+To stop all running services:
+```bash
+docker compose down
+```
+
+---
+
+## 📂 Repository Structure
+
+```text
+HIT-ai-cybersecurity-labs/project/
+├── dashboard.py           # Streamlit web dashboard & telemetry visualizers
+├── detector.py            # Core hybrid detector (Signatures + Isolation Forest + STIX)
+├── evaluator.py           # Performance benchmarking, FP/FN & metric extraction
+├── simulator.py           # Synthetic traffic & attack campaign generator
+├── Dockerfile             # Container definition for detector engine
+├── Dockerfile.dashboard   # Container definition for Streamlit dashboard UI
+├── Dockerfile.simulator   # Container definition for traffic simulator
+├── docker-compose.yml     # Multi-service container orchestration
+├── mitre/                 # MITRE ATT&CK STIX JSON threat bundles
+│   └── enterprise-attack-mini.json
+├── logs/                  # Input security logs
+├── output/                # Generated findings.json and evaluation reports
+├── DOC/                   # Technical reports and architectural SOC analysis
+└── README.md              # Main project documentation
+```
+
+---
+
+## 👨‍💻 Academic Information & Credits
+
+* **Student:** Shachar Laria
+* **Academic Advisor:** Andrey Kozuchov
+* **Institution:** Holon Institute of Technology (HIT)
+* **Course:** Artificial Intelligence-Driven Cybersecurity (Final Project)
