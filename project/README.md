@@ -142,11 +142,11 @@ In accordance with academic evaluation criteria, the interaction between unsuper
 ### Prerequisites
 * Docker (v20.10+) and Docker Compose installed on your host machine.
 
-### 1. Clone the Repository
+**### 1. Clone the Repository
 ```bash
 git clone [https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git](https://github.com/shacharlaria/HIT-ai-cybersecurity-labs.git)
 cd HIT-ai-cybersecurity-labs/project
-```
+```**
 
 ### 2. Build and Launch Containers
 ```bash
