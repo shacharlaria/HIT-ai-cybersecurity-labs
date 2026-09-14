@@ -1,5 +1,8 @@
 FROM python:3.12-slim
 
+# הזרמת לוגים מיידית לטרמינל
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
 COPY simulator.py /app/simulator.py
