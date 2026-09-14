@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-Write-Host "Building and starting Lab 1a..." -ForegroundColor Cyan
+Write-Host "Building and starting Hybrid SOC Threat Detector..." -ForegroundColor Cyan
 docker compose up --build -d
 
 if ($LASTEXITCODE -ne 0) {
@@ -8,9 +8,9 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 Write-Host ""
-Write-Host "Lab started successfully." -ForegroundColor Green
+Write-Host "SOC Framework started successfully." -ForegroundColor Green
 Write-Host "Dashboard: http://localhost:8000"
-Write-Host "Findings: output\findings.json"
+Write-Host "Findings:  output\findings.json"
 
 Start-Sleep -Seconds 2
 Start-Process "http://localhost:8000"
