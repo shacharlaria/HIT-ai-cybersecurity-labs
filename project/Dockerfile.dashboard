@@ -1,5 +1,8 @@
 FROM python:3.12-slim
 
+# מניעת אגירת לוגים ב-Buffer כדי שיופיעו מיד ב-Docker
+ENV PYTHONUNBUFFERED=1
+
 WORKDIR /app
 
 COPY dashboard.py /app/dashboard.py
